@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Search Student</h2>
+
+<form method="GET">
+
+<input
+type="text"
+name="q"
+class="form-control"
+placeholder="Enter Roll Number">
+
+<button class="btn btn-primary mt-2">
+Search
+</button>
+
+</form>
+
+<hr>
+
+{% for r in results %}
+
+<div class="card mt-2">
+
+<div class="card-body">
+
+<h5>{{ r.name }}</h5>
+
+<p>
+Roll No: {{ r.roll_no }}
+</p>
+
+<p>
+Semester: {{ r.semester }}
+</p>
+
+<p>
+Fee Status: {{ r.fee_status }}
+</p>
+
+</div>
+
+</div>
+
+{% empty %}
+
+<p>No Record Found</p>
+
+{% endfor %}
+
+{% endblock %}

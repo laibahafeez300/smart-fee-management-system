@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        Admin Dashboard
+    </h1>
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card bg-primary text-white shadow">
+                <div class="card-body text-center">
+                    <h2>{{ total_students }}</h2>
+                    <h5>Total Students</h5>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-success text-white shadow">
+                <div class="card-body text-center">
+                    <h2>{{ paid_students }}</h2>
+                    <h5>Paid Students</h5>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-danger text-white shadow">
+                <div class="card-body text-center">
+                    <h2>{{ unpaid_students }}</h2>
+                    <h5>Unpaid Students</h5>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="/add/" class="btn btn-success">
+            Add Student
+        </a>
+
+        <a href="/view/" class="btn btn-primary">
+            View Records
+        </a>
+
+        <a href="/search/" class="btn btn-warning">
+            Search Student
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

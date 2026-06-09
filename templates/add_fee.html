@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow mt-4">
+
+<div class="card-header bg-success text-white">
+    <h3>Add Student Fee Record</h3>
+</div>
+
+<div class="card-body">
+
+<form method="POST">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit"
+class="btn btn-success">
+Save Record
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

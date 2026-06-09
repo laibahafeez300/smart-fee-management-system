@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="p-5 text-center bg-light rounded shadow">
+
+        <h1 class="display-4 fw-bold text-primary">
+            Smart Fee Management System
+        </h1>
+
+        <p class="lead">
+            Manage student fee records efficiently and securely.
+        </p>
+
+        <hr>
+
+        <div class="row mt-4">
+
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4>Add Records</h4>
+                        <p>Add new student fee information.</p>
+                        <a href="/add/" class="btn btn-success">
+                            Add Student
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4>View Records</h4>
+                        <p>See all fee records.</p>
+                        <a href="/view/" class="btn btn-primary">
+                            View Records
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4>Search Records</h4>
+                        <p>Find students instantly.</p>
+                        <a href="/search/" class="btn btn-warning">
+                            Search
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="row mt-4">
+
+<div class="col-md-4">
+<div class="card bg-primary text-white">
+<div class="card-body">
+<h3>{{ total_students }}</h3>
+<p>Total Students</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card bg-success text-white">
+<div class="card-body">
+<h3>{{ paid_students }}</h3>
+<p>Paid Students</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card bg-danger text-white">
+<div class="card-body">
+<h3>{{ unpaid_students }}</h3>
+<p>Unpaid Students</p>
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

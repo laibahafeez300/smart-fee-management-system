@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        All Student Fee Records
+    </h1>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-bordered table-striped table-hover">
+
+                <thead class="table-dark">
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Semester</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for r in records %}
+
+                    <tr>
+
+                        <td>{{ r.id }}</td>
+                        <td>{{ r.name }}</td>
+                        <td>{{ r.roll_no }}</td>
+                        <td>{{ r.semester }}</td>
+                        <td>
+                            {% if r.fee_status == "Paid" %}
+                                <span class="badge bg-success">
+                                    Paid
+                                </span>
+                            {% else %}
+                                <span class="badge bg-danger">
+                                    Unpaid
+                                </span>
+                            {% endif %}
+                        </td>
+
+                        <td>
+
+                            <a href="/edit/{{ r.id }}/"
+                               class="btn btn-warning btn-sm">
+                                Edit
+                            </a>
+
+                            <a href="/delete/{{ r.id }}/"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Are you sure you want to delete this record?')">
+                                Delete
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% empty %}
+
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            No Records Found
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
